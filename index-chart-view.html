@@ -4,22 +4,30 @@
     <meta charset="UTF-8" />
     <title>Widgets TradingView</title>
     <style>
-      body {
+      html, body {
         margin: 0;
+        padding: 0;
         background-color: rgb(25, 25, 25);
       }
 
-      .widget-wrapper {
+      .full-width {
+        width: 100vw;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        box-sizing: border-box;
+      }
+
+      .tradingview-widget-container {
         width: 100%;
         max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px 0;
       }
     </style>
   </head>
   <body>
-    <div class="widget-wrapper">
-      <!-- USTEC.F -->
+    <div class="full-width">
+      <!-- Widget USTEC.F -->
       <div class="tradingview-widget-container">
         <div class="tradingview-widget-container__widget"></div>
         <div class="tradingview-widget-copyright">
@@ -40,8 +48,8 @@
       </div>
     </div>
 
-    <div class="widget-wrapper">
-      <!-- US500.F -->
+    <div class="full-width">
+      <!-- Widget US500.F -->
       <div class="tradingview-widget-container">
         <div class="tradingview-widget-container__widget"></div>
         <div class="tradingview-widget-copyright">
