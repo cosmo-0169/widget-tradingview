@@ -1,21 +1,22 @@
-<!-- TradingView Widget Indices -->
-<div class="tradingview-widget-container" style="width:450px; height:800px;">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright">
-    <a href="https://fr.tradingview.com/" rel="noopener nofollow" target="_blank">
-      <span class="blue-text">Suivre tous les marchés sur TradingView</span>
-    </a>
+<div style="display:flex; justify-content:center; background: transparent; padding: 10px;">
+  <div class="tradingview-widget-container" style="width:450px; height:800px; background-color: rgb(25, 25, 25);">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://fr.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <span class="blue-text">Suivre tous les marchés sur TradingView</span>
+      </a>
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+    {
+      "displayMode": "regular",
+      "feedMode": "market",
+      "market": "index",
+      "colorTheme": "dark",
+      "isTransparent": true,
+      "locale": "fr",
+      "width": 450,
+      "height": 800
+    }
+    </script>
   </div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
-  {
-    "displayMode": "regular",
-    "feedMode": "market",
-    "colorTheme": "dark",
-    "isTransparent": true,
-    "locale": "fr",
-    "market": "index",
-    "width": 450,
-    "height": 800
-  }
-  </script>
 </div>
