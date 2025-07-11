@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Calendrier économique - USA</title>
   <style>
     body {
@@ -13,6 +13,7 @@
       margin: 0;
       padding: 2rem;
       font-family: Arial, sans-serif;
+      color: #ccc;
     }
 
     .calendar-wrapper {
@@ -20,10 +21,20 @@
       width: 800px;
       max-width: 100%;
     }
+
+    .timezone-warning {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 14px;
+      color: #bbb;
+    }
   </style>
 </head>
 <body>
   <div class="calendar-wrapper">
+    <div class="timezone-warning">
+      Changez le fuseau horaire pour passer en heure de New York dans les options du widget.
+    </div>
     <div id="economic-calendar-244766"></div>
     <script type="text/javascript" src="https://fxverify.com/Content/remote/remote-calendar-widget.js"></script>
     <script type="text/javascript">
