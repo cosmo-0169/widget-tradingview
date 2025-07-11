@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Widget Nasdaq Timeline</title>
+  <title>Widget Futures Timeline</title>
   <style>
     body {
       background-color: rgb(25, 25, 25);
@@ -16,7 +16,7 @@
     }
 
     .tradingview-widget-container {
-      width: 400px;
+      width: 450px;
       height: 800px;
     }
   </style>
@@ -33,12 +33,12 @@
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
     {
       "displayMode": "regular",
-      "feedMode": "symbol",
-      "symbol": "CME_MINI:NQ1!",
+      "feedMode": "market",
       "colorTheme": "dark",
       "isTransparent": false,
       "locale": "fr",
-      "width": 400,
+      "market": "futures",
+      "width": 450,
       "height": 800
     }
     </script>
