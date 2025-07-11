@@ -10,24 +10,23 @@
         background-color: rgb(25, 25, 25);
       }
 
-      .full-width {
-        width: 100vw;
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 20px 0;
+      .widget-wrapper {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 20px;
         box-sizing: border-box;
       }
 
       .tradingview-widget-container {
         width: 100%;
-        max-width: 1200px;
+        height: 100%;
       }
     </style>
   </head>
   <body>
-    <div class="full-width">
-      <!-- Widget USTEC.F -->
+    <!-- Widget USTEC.F -->
+    <div class="widget-wrapper">
       <div class="tradingview-widget-container">
         <div class="tradingview-widget-container__widget"></div>
         <div class="tradingview-widget-copyright">
@@ -48,8 +47,8 @@
       </div>
     </div>
 
-    <div class="full-width">
-      <!-- Widget US500.F -->
+    <!-- Widget US500.F -->
+    <div class="widget-wrapper">
       <div class="tradingview-widget-container">
         <div class="tradingview-widget-container__widget"></div>
         <div class="tradingview-widget-copyright">
