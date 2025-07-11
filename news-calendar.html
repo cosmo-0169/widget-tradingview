@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Calendrier économique USA</title>
+  <title>Calendrier économique - USA</title>
   <style>
     body {
-      background-color: rgb(25, 25, 25);
+      background-color: rgb(25, 25, 25); /* gris foncé type Notion */
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -19,7 +19,7 @@
       background-color: transparent;
       width: 800px;
       max-width: 100%;
-      filter: invert(1) hue-rotate(180deg) brightness(1.1); /* simulate dark mode */
+      filter: invert(1) hue-rotate(180deg) brightness(1.05); /* simulate dark mode */
     }
   </style>
 </head>
@@ -37,6 +37,7 @@
         IsShowEmbedButton: false,
         DefaultCountries: "US",
         DefaultImpacts: "HIGH,MEDIUM",
+        TimeZone: "America/New_York", // UTC-4
         ContainerId: "economic-calendar-244766"
       });
     </script>
