@@ -21,6 +21,7 @@
       line-height: 1;
       transform: scale(0.5); /* Réduction à 50% */
       transform-origin: center;
+      width: max-content;
     }
 
     .nixie span {
@@ -57,13 +58,15 @@
       margin-top: -10px;
       color: white;
       font-size: 14px;
-      letter-spacing: 3px;  /* réduit davantage */
+      letter-spacing: 3px;
       line-height: 1;
-      max-width: 350px;
-      text-align: center;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      display: inline-block;
+      width: 540px; /* fixe la largeur à celle de l'horloge à 50% scale */
+      text-align: center;
+      /* background-color: rgba(255, 192, 203, 0.3);  <- pour debug, à enlever après */
     }
   </style>
 </head>
