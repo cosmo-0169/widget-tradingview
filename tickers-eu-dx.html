@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>TradingView Widgets - DXY & EURUSD</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #191919; /* Fond assorti au Notion sombre */
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .tradingview-widget-container {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Widget pour DXY -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://fr.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <span class="blue-text">Suivre tous les marchés sur TradingView</span>
+      </a>
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+    {
+      "symbol": "CAPITALCOM:DXY",
+      "colorTheme": "dark",
+      "isTransparent": true,
+      "locale": "fr",
+      "width": 370
+    }
+    </script>
+  </div>
+
+  <!-- Widget pour EURUSD -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://fr.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <span class="blue-text">Suivre tous les marchés sur TradingView</span>
+      </a>
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+    {
+      "symbol": "FOREXCOM:EURUSD",
+      "colorTheme": "dark",
+      "isTransparent": true,
+      "locale": "fr",
+      "width": 370
+    }
+    </script>
+  </div>
+
+</body>
+</html>
