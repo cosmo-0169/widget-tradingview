@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Nixie Tube Clock – New York Time</title>
+  <title>Nixie Tube Clock – Mini</title>
   <style>
     body {
       margin: 0;
@@ -21,7 +21,6 @@
       line-height: 1;
       transform: scale(0.5); /* Réduction à 50% */
       transform-origin: center;
-      width: max-content;
     }
 
     .nixie span {
@@ -58,33 +57,25 @@
       margin-top: -10px;
       color: white;
       font-size: 14px;
-      letter-spacing: 3px;
+      letter-spacing: 9px;
       line-height: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: inline-block;
-      width: 540px; /* fixe la largeur à celle de l'horloge à 50% scale */
-      text-align: center;
-      /* background-color: rgba(255, 192, 203, 0.3);  <- pour debug, à enlever après */
     }
   </style>
 </head>
 <body>
-  <div class="nixie" id="clock-ny"></div>
-  <div class="label">NEW YORK TIME</div>
+  <div class="nixie" id="clock"></div>
+  <div class="label">LOCAL TIME</div>
 
   <script>
-    function updateNYTime() {
+    function update() {
       const now = new Date();
-      const nyTime = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
       const parts = [
-        String(nyTime.getHours()).padStart(2, '0'),
-        String(nyTime.getMinutes()).padStart(2, '0'),
-        String(nyTime.getSeconds()).padStart(2, '0')
+        String(now.getHours()).padStart(2, '0'),
+        String(now.getMinutes()).padStart(2, '0'),
+        String(now.getSeconds()).padStart(2, '0')
       ];
       const full = parts.join(':');
-      const container = document.getElementById('clock-ny');
+      const container = document.getElementById('clock');
       container.innerHTML = '';
       for (const char of full) {
         const span = document.createElement('span');
@@ -93,8 +84,8 @@
       }
     }
 
-    setInterval(updateNYTime, 1000);
-    updateNYTime();
+    setInterval(update, 1000);
+    update();
   </script>
 </body>
 </html>
