@@ -18,11 +18,12 @@
     .nixie {
       display: flex;
       gap: 10px;
+      line-height: 1; /* Interligne réduit */
     }
 
     .nixie span {
       position: relative;
-      font-size: 85px; /* Réduit de 15% */
+      font-size: 85px;
       color: rgba(255,140,0,1);
       text-shadow: 0 0 5px #ff7b00, 0 0 10px #ff6600, 0 0 15px #ff4400;
       animation: nixieGlow 2s infinite alternate;
@@ -51,10 +52,11 @@
     }
 
     .label {
-      margin-top: 20px;
+      margin-top: 10px;
       color: white;
-      font-size: 27px; /* Augmenté de 35% */
-      letter-spacing: 14px; /* Étendu pour correspondre à la largeur de l'horloge */
+      font-size: 27px;
+      letter-spacing: 18px; /* encore augmenté pour matcher la largeur */
+      line-height: 1;
     }
   </style>
 </head>
@@ -65,14 +67,18 @@
   <script>
     function update() {
       const now = new Date();
-      const str = [now.getHours(), now.getMinutes(), now.getSeconds()]
-        .map(n => String(n).padStart(2, '0')).join('');
-      const c = document.getElementById('clock');
-      c.innerHTML = '';
-      for (const d of str) {
-        const sp = document.createElement('span');
-        sp.textContent = d;
-        c.appendChild(sp);
+      const parts = [
+        String(now.getHours()).padStart(2, '0'),
+        String(now.getMinutes()).padStart(2, '0'),
+        String(now.getSeconds()).padStart(2, '0')
+      ];
+      const full = parts.join(':');
+      const container = document.getElementById('clock');
+      container.innerHTML = '';
+      for (const char of full) {
+        const span = document.createElement('span');
+        span.textContent = char;
+        container.appendChild(span);
       }
     }
 
