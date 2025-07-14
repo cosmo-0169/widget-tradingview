@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Nixie Clock – Heure Locale</title>
+  <meta charset="UTF-8" />
+  <title>Neon Tube Clock – New York</title>
   <style>
-    body { margin:0; background:#191919; display:flex; justify-content:center; align-items:center; height:100vh; }
-    .nixie-clock { display:flex; }
-    .digit {
-      width: 80px; height: 120px; margin:0 4px;
-      color: rgba(255,100,10,1);
-      font-size: 100px; text-align:center; line-height:120px;
-      text-shadow: 0 0 10px rgba(255,140,60,0.8);
-      animation: glow 1s infinite alternate;
-      background: radial-gradient(circle at center, rgba(255,60,0,0.2), transparent);
-      font-family: 'Courier New', monospace;
+    body {
+      margin: 0;
+      background: #191919;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    @keyframes glow {
-      from { text-shadow: 0 0 8px rgba(255,80,20,0.6); }
-      to   { text-shadow: 0 0 15px rgba(255,140,60,1); }
+    .neon-clock {
+      display: flex;
+      gap: 5px;
+    }
+    .digit {
+      position: relative;
+      width: 80px;
+      height: 120px;
+      font-size: 100px;
+      color: #1affd5;
+      font-family: 'Courier New', monospace;
+      text-shadow:
+        0 0 10px #1affd5,
+        0 0 20px #1affd5,
+        0 0 30px rgba(26,255,213,0.5);
+      animation: flicker 1.5s infinite alternate;
+    }
+    @keyframes flicker {
+      0%,18%,22%,25%,53%,57%,100%{opacity:1;}
+      20%,55%{opacity:0.6;}
     }
   </style>
 </head>
 <body>
-  <div class="nixie-clock" id="clock"></div>
+  <div class="neon-clock" id="clock"></div>
   <script>
-    function updateClock() {
-      const now = new Date();
-      const hh = String(now.getHours()).padStart(2,'0');
-      const mm = String(now.getMinutes()).padStart(2,'0');
-      const ss = String(now.getSeconds()).padStart(2,'0');
-      const time = hh + mm + ss;
+    function updateClockNY() {
+      const nowStr = new Date().toLocaleString('en-US', { timeZone:'America/New_York', hour12:false });
+      const match = nowStr.match(/\d{2}/g);
+      if (!match) return;
+      const [hh, mm, ss] = match;
       const container = document.getElementById('clock');
       container.innerHTML = '';
-      for (const c of time) {
+      for (const c of hh + mm + ss) {
         const d = document.createElement('div');
         d.className = 'digit';
         d.textContent = c;
         container.appendChild(d);
       }
     }
-    setInterval(updateClock, 1000);
-    updateClock();
+    setInterval(updateClockNY, 1000);
+    updateClockNY();
   </script>
 </body>
 </html>
