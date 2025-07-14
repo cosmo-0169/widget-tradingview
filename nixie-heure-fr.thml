@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Clock - Style Nixie</title>
+  <style>
+    body { margin:0; background:#191919; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+    .nixie-clock { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; display:flex; }
+    .digit {
+      position: relative;
+      width: 80px;
+      height: 120px;
+      margin: 0 4px;
+      background: radial-gradient(ellipse at center, rgba(255,60,0,0.2), transparent);
+      color: rgba(255,100,10,1);
+      font-size: 100px;
+      text-align: center;
+      line-height: 120px;
+      animation: glow 1s infinite alternate;
+      text-shadow: 0 0 10px rgba(255,100,10,0.8);
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 8px rgba(255,80,20,0.6); }
+      to   { text-shadow: 0 0 15px rgba(255,140,60,1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="nixie-clock" id="clock"></div>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hh = String(now.getHours()).padStart(2,'0');
+      const mm = String(now.getMinutes()).padStart(2,'0');
+      const ss = String(now.getSeconds()).padStart(2,'0');
+      const timeStr = hh+mm+ss;
+      const container = document.getElementById('clock');
+      container.innerHTML = '';
+      for (let i=0; i<timeStr.length; i++) {
+        const d = document.createElement('div');
+        d.className = 'digit';
+        d.textContent = timeStr[i];
+        container.appendChild(d);
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
