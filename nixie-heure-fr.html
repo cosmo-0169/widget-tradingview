@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Nixie Tube Clock – Mini</title>
+  <title>Nixie Tube Clock – New York Time</title>
   <style>
     body {
       margin: 0;
@@ -57,25 +57,26 @@
       margin-top: -10px;
       color: white;
       font-size: 14px;
-      letter-spacing: 9px;
+      letter-spacing: 6px;  /* réduit de 9px à 6px */
       line-height: 1;
     }
   </style>
 </head>
 <body>
-  <div class="nixie" id="clock"></div>
-  <div class="label">LOCAL TIME</div>
+  <div class="nixie" id="clock-ny"></div>
+  <div class="label">NEW YORK TIME</div>
 
   <script>
-    function update() {
+    function updateNYTime() {
       const now = new Date();
+      const nyTime = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
       const parts = [
-        String(now.getHours()).padStart(2, '0'),
-        String(now.getMinutes()).padStart(2, '0'),
-        String(now.getSeconds()).padStart(2, '0')
+        String(nyTime.getHours()).padStart(2, '0'),
+        String(nyTime.getMinutes()).padStart(2, '0'),
+        String(nyTime.getSeconds()).padStart(2, '0')
       ];
       const full = parts.join(':');
-      const container = document.getElementById('clock');
+      const container = document.getElementById('clock-ny');
       container.innerHTML = '';
       for (const char of full) {
         const span = document.createElement('span');
@@ -84,8 +85,8 @@
       }
     }
 
-    setInterval(update, 1000);
-    update();
+    setInterval(updateNYTime, 1000);
+    updateNYTime();
   </script>
 </body>
 </html>
