@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Nixie Tube Clock – Style réaliste</title>
+  <title>Nixie Tube Clock – Mini</title>
   <style>
     body {
       margin: 0;
@@ -17,8 +17,10 @@
 
     .nixie {
       display: flex;
-      gap: 10px;
-      line-height: 1; /* Interligne réduit */
+      gap: 5px;
+      line-height: 1;
+      transform: scale(0.5); /* Réduction à 50% */
+      transform-origin: center;
     }
 
     .nixie span {
@@ -52,10 +54,10 @@
     }
 
     .label {
-      margin-top: 10px;
+      margin-top: -10px;
       color: white;
-      font-size: 27px;
-      letter-spacing: 18px; /* encore augmenté pour matcher la largeur */
+      font-size: 14px;
+      letter-spacing: 9px;
       line-height: 1;
     }
   </style>
