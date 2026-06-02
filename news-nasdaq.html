@@ -1,22 +1,53 @@
-<div style="display:flex; justify-content:center; background: transparent; padding: 10px;">
-  <div class="tradingview-widget-container" style="width:450px; height:800px; background-color: rgb(25, 25, 25);">
-    <div class="tradingview-widget-container__widget"></div>
-    <div class="tradingview-widget-copyright">
-      <a href="https://fr.tradingview.com/" rel="noopener nofollow" target="_blank">
-        <span class="blue-text">Suivre tous les marchés sur TradingView</span>
-      </a>
-    </div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
-    {
-      "displayMode": "regular",
-      "feedMode": "symbol",
-      "symbol": "CME_MINI:NQ1!",
-      "colorTheme": "dark",
-      "isTransparent": true,
-      "locale": "fr",
-      "width": 450,
-      "height": 800
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background: rgb(25, 25, 25);
+      overflow: hidden;
     }
-    </script>
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div style="display:flex; justify-content:center; background: rgb(25,25,25); padding: 10px;">
+    <div class="tradingview-widget-container" style="width:450px; height:800px; background-color: rgb(25, 25, 25);">
+      <div class="tradingview-widget-container__widget"></div>
+
+      <div class="tradingview-widget-copyright">
+        <a href="https://fr.tradingview.com/" rel="noopener nofollow" target="_blank">
+          <span class="blue-text">Suivre tous les marchés sur TradingView</span>
+        </a>
+      </div>
+
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+      {
+        "displayMode": "regular",
+        "feedMode": "symbol",
+        "symbol": "CME_MINI:NQ1!",
+        "colorTheme": "dark",
+        "isTransparent": true,
+        "locale": "fr",
+        "width": 450,
+        "height": 800
+      }
+      </script>
+
+    </div>
   </div>
-</div>
+
+</body>
+
+</html>
