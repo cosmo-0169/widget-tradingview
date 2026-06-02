@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Calendrier économique - USA</title>
+
   <style>
+    html,
     body {
-      background-color: rgb(25, 25, 25); /* gris foncé compatible Notion */
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background: rgb(25, 25, 25);
+    }
+
+    body {
       display: flex;
       justify-content: center;
       align-items: flex-start;
       min-height: 100vh;
-      margin: 0;
       padding: 2rem;
       font-family: Arial, sans-serif;
       color: #ccc;
+      box-sizing: border-box;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     .calendar-wrapper {
@@ -23,10 +36,14 @@
     }
   </style>
 </head>
+
 <body>
+
   <div class="calendar-wrapper">
     <div id="economic-calendar-244766"></div>
+
     <script type="text/javascript" src="https://fxverify.com/Content/remote/remote-calendar-widget.js"></script>
+
     <script type="text/javascript">
       RemoteCalendar({
         Lang: "en",
@@ -37,10 +54,12 @@
         IsShowEmbedButton: false,
         DefaultCountries: "US",
         DefaultImpacts: "HIGH,MEDIUM",
-        TimeZone: "America/New_York", // UTC-4
+        TimeZone: "America/New_York",
         ContainerId: "economic-calendar-244766"
       });
     </script>
   </div>
+
 </body>
+
 </html>
