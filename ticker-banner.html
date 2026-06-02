@@ -1,64 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: transparent;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .wrapper {
-      display: flex;
-      justify-content: center;
-      background: transparent;
-      padding: 0;
-    }
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background: rgb(25, 25, 25);
+            overflow: hidden;
+        }
 
-    .tradingview-widget-container {
-      background-color: rgb(25, 25, 25);
-      padding: 5px;
-      border-radius: 8px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-  </style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background: rgb(25, 25, 25);
+            padding: 0;
+            margin: 0;
+        }
+
+        .tradingview-widget-container {
+            width: 100%;
+            background: rgb(25, 25, 25);
+            padding: 5px;
+            border-radius: 8px;
+            margin: 0;
+        }
+
+        .tradingview-widget-copyright {
+            background: rgb(25, 25, 25);
+        }
+    </style>
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright">
-        <a href="https://fr.tradingview.com/" rel="noopener nofollow" target="_blank">
-          <span class="blue-text">Suivre tous les marchés sur TradingView</span>
-        </a>
-      </div>
 
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-      {
-        "symbols": [
-          { "proName": "BLACKBULL:USTEC.F", "title": "E-MINI Nasdaq 100" },
-          { "proName": "BLACKBULL:US500.F", "title": "E-MINI S&P 500" },
-          { "proName": "FOREXCOM:EURUSD", "title": "EURUSD Forex.com" },
-          { "proName": "FOREXCOM:GBPUSD", "title": "GBPUSD Forex.com" },
-          { "proName": "FOREXCOM:USDCAD", "title": "USDCAD Forex.com" },
-          { "proName": "TVC:GOLD", "title": "Gold TVC" },
-          { "proName": "TVC:SILVER", "title": "Silver TVC" },
-          { "proName": "BITSTAMP:BTCUSD", "title": "BTCUSD Bitstamp" },
-          { "proName": "BITSTAMP:ETHUSD", "title": "ETHUSD Bitstamp" }
-        ],
-        "colorTheme": "dark",
-        "locale": "fr",
-        "largeChartUrl": "",
-        "isTransparent": true,
-        "showSymbolLogo": true,
-        "displayMode": "adaptive"
-      }
-      </script>
+    <div class="wrapper">
+        <div class="tradingview-widget-container">
+
+            <div class="tradingview-widget-container__widget"></div>
+
+            <div class="tradingview-widget-copyright">
+                <a href="https://fr.tradingview.com/" rel="noopener nofollow" target="_blank">
+                    <span class="blue-text">Suivre tous les marchés sur TradingView</span>
+                </a>
+            </div>
+
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+                async>
+                {
+                  "symbols": [
+                    {
+                      "proName": "BLACKBULL:USTEC.F",
+                      "title": "E-MINI Nasdaq 100"
+                    },
+                    {
+                      "proName": "BLACKBULL:US500.F",
+                      "title": "E-MINI S&P 500"
+                    },
+                    {
+                      "proName": "FOREXCOM:EURUSD",
+                      "title": "EURUSD Forex.com"
+                    },
+                    {
+                      "proName": "FOREXCOM:GBPUSD",
+                      "title": "GBPUSD Forex.com"
+                    },
+                    {
+                      "proName": "FOREXCOM:USDCAD",
+                      "title": "USDCAD Forex.com"
+                    },
+                    {
+                      "proName": "TVC:GOLD",
+                      "title": "Gold TVC"
+                    },
+                    {
+                      "proName": "TVC:SILVER",
+                      "title": "Silver TVC"
+                    },
+                    {
+                      "proName": "BITSTAMP:BTCUSD",
+                      "title": "BTCUSD Bitstamp"
+                    },
+                    {
+                      "proName": "BITSTAMP:ETHUSD",
+                      "title": "ETHUSD Bitstamp"
+                    }
+                  ],
+                  "colorTheme": "dark",
+                  "locale": "fr",
+                  "largeChartUrl": "",
+                  "isTransparent": true,
+                  "showSymbolLogo": true,
+                  "displayMode": "adaptive"
+                }
+            </script>
+
+        </div>
     </div>
-  </div>
+
 </body>
+
 </html>
